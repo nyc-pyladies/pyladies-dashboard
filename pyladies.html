@@ -59,8 +59,8 @@
   <body class="nav-sm" >
     <div class="container body" >
       <div class="main_container" >
-        <div class="col-md-3 left_col menu_fixed" style="background-color:#ee264d; ">
-          <div class="left_col scroll-view" style="background-color:#ee264d; font-size:14px">
+        <div class="col-md-3 left_col menu_fixed" style="background-color:white; ">
+          <div class="left_col scroll-view" style="background-color:white; font-size:14px">
            
 		 <!-- menu profile quick info -->
             <div class="profile clearfix">
@@ -84,14 +84,14 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section active">
                 <h3>General</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home" ></i> Home <span class="fa fa-chevron-right"></span></a>                  </li>
+                <ul class="nav side-menu" >
+                  <li><a><i class="fa fa-home" ></i> <span style="">Home </span><span class="fa fa-chevron-right"></span></a>                  </li>
 
 
 <li><a href="#"><i class="fa fa-line-chart"></i> Python Groups <span class="fa fa-chevron-right"></span></a>
                                       </li>
 
-                                           <li><a href="pyladies.html"><i class="fa fa-area-chart"></i> PyLadies Chapters<span class="fa fa-chevron-right"></span></a>
+                                           <li><a href="pyladies.html"><i class="fa fa-area-chart"></i> <span style="color:#a7a3a3; font-weight:bold">PyLadies Chapters</span><span class="fa fa-chevron-right"></span></a>
                                       </li>
 
                                   </ul>
@@ -99,7 +99,7 @@
               <div class="menu_section">
                 <h3>External</h3>
                 <ul class="nav side-menu">
-                  <li><a href="https://www.python.org/psf/" target="_blank"><i class="fa fa-building"></i> PSF </a>
+                  <li><a href="https://www.python.org/psf/" target="_blank"><i class="fa fa-building"></i> <span style="color:#a7a3a3; font-weight:bold">PSF</span></a>
                                       </li>
                </ul>
               </div>
@@ -232,22 +232,21 @@ document.getElementById('lastupdate').innerHTML = "Last Update: " + data[0][0].l
                     <div class="row">
                       <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="tile-stats" style="background-color:white">
-                          <div class="icon" style="color:#ee264d"><i class="fa fa-users"></i>
-                          </div>
+                          <div ><img align="right" src="pyladies-group.png" style="padding: 10px 10px 10px 10px">                          </div>
+
                           <div id="chapters" class="count" style="color:#ee264d"></div>
 <p style="color:#ee264d"></p>
-                      <h3>PyLadies Chapters</h3>
+                      <h3>Chapters</h3>
                           <br/>
                         </div>
                       </div>
                       <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="tile-stats" style="background-color:white">
 
-                          <div ><img align="right" src="pyladies_logo.png" height=60px width=60px></i>
-                          </div>
+                          <div ><img align="right" src="pyladies_logo.png" style="padding: 10px 10px 10px 10px">                          </div>
                           <div id="members" class="count" style="color:#ee264d"></div>
 
-                          <h3>PyLadies Members</h3>
+                          <h3>Members</h3>
                           <p></p><br/>
 
                         </div>
