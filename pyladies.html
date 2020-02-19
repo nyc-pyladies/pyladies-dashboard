@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PyLadies | PyLadies Global Community</title>
+
+    <!-- Bootstrap -->
+<link href="https://py-community.github.io/resources/css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <link href="https://py-community.github.io/resources/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://py-community.github.io/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://py-community.github.io/resources/leaflet-1.5.1/leaflet.css"/>
+<link rel="stylesheet" href="https://py-community.github.io/resources/leaflet-awesome-markers/dist/leaflet.awesome-markers.css">
+
+    
+    <!-- Custom Theme Style -->
+    <link href="https://py-community.github.io/resources/css/custom.min.css" rel="stylesheet">
+
+
+    <script src="https://py-community.github.io/resources/js/jquery.min.js"></script>
+    <script src="https://py-community.github.io/resources/js/bootstrap.min.js"></script>
+    <script src="https://py-community.github.io/resources/js/jquery.csv.min.js"></script>
+    <script src="https://py-community.github.io/resources/js/jquery.dataTables.min.js"></script>
+    <script src="https://py-community.github.io/resources/js/dataTables.bootstrap.js"></script>
+    <script src="https://py-community.github.io/resources/js/csv_to_html_table.js"></script>
+<script src="https://py-community.github.io/resources/leaflet-1.5.1/leaflet.js"></script>
+    <script src="https://py-community.github.io/resources/leaflet-awesome-markers/dist/leaflet.awesome-markers.js"></script>
+    <link href="https://py-community.github.io/resources/css/animate.min.css" rel="stylesheet">
+
+<style>  
+
+    tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+.nav.side-menu>li.active>a{text-shadow:rgba(0,0,0,.25) 0 -1px 0;background:linear-gradient(white,white),#424040;color:purple; box-shadow:rgba(0,0,0,.25) 0 1px 0,inset rgba(255,255,255,.20) 0 1px 0}
+
+ .awesome-marker i {
+        font-size: 10px;
+        margin-top: 13px;
+        
+    }
+
+.col-md-9-5 { width: 79.96667%; }
+.col-md-2-5 { width: 22.83333%; }
+.col-sm-9-5 { width: 79.96667%; }
+.col-sm-2-5 { width: 22.83333%; }
+
+   </style>   
+  </head>
+
+  <body class="nav-sm" >
+    <div class="container body" >
+      <div class="main_container" >
+        <div class="col-md-3 left_col menu_fixed" style="background-color:#ee264d; ">
+          <div class="left_col scroll-view" style="background-color:#ee264d; font-size:14px">
+           
+		 <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="images/Rc.pn" width = "230px" alt="..." class="">
+              </div>
+              <div class="profile_info">
+                <span>.</span>
+                <h2></h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <div class="clearfix"></div>
+
+            
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section active">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home" ></i> Home <span class="fa fa-chevron-right"></span></a>                  </li>
+
+
+<li><a href="#"><i class="fa fa-line-chart"></i> Python Groups <span class="fa fa-chevron-right"></span></a>
+                                      </li>
+
+                                           <li><a href="pyladies.html"><i class="fa fa-area-chart"></i> PyLadies Chapters<span class="fa fa-chevron-right"></span></a>
+                                      </li>
+
+                                  </ul>
+              </div>
+              <div class="menu_section">
+                <h3>External</h3>
+                <ul class="nav side-menu">
+                  <li><a href="https://www.python.org/psf/" target="_blank"><i class="fa fa-building"></i> PSF </a>
+                                      </li>
+               </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small" style="background-color:#aaaaaa;">
+              <a data-toggle="tooltip" data-placement="top" title="" style="background-color:#ffffff;">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a> 
+              <a id="menu_toggle2" data-toggle="tooltip" data-placement="top" title="FullScreen" style="background-color:#ffffff;">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true" ></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="" style="background-color:#ffffff;">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Home" href="index.html" style="background-color:#ffffff;">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav" style="background-color:white">
+          <div class="nav_menu" style="height:45px; background-color:white">
+            <nav>
+              
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-feed"></i> Follow Us
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                        <li>
+                 <a href="http://twitter.com/pyladies">
+                                                <span><i class="fa fa-twitter"></i>      Twitter</span>
+                      </a>
+<li>
+                 <a href="https://github.com/pyladies">
+                                                <span><i class="fa fa-github"></i>      GitHub</span>
+                      </a>
+
+                    </li>
+<li>
+                 <a href="http://slackin.pyladies.com/">
+                                                <span><i class="fa fa-slack"></i>      Slack</span>
+                      </a>
+
+                    </li>
+
+                                      </ul>
+                </li>
+<li class="">
+<a class="user-profile dropdown-toggle" href="https://github.com/nyc-pyladies/pyladies-dashboard" data-size="large" aria-label="Star "><i class="fa fa-github"></i> Star</a>
+</li>
+
+                                                                            </ul>
+                            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main" style="background:#fffffffa; ">
+          <div class="">
+            <div class="page-title">
+              <div class="title">
+<div class="col-md-12 col-sm-12 col-xs-12">
+
+                <h3 style="color:black">Global PyLadies Community</h3>
+</div>
+              </div>
+
+              
+              </div>
+            </div>
+            
+            <div class="clearfix"></div>
+
+<script>
+ $(document).ready(function() {
+d3.json("https://raw.githubusercontent.com/py-community/pyladies/master/docs/data/pyladies_summary.json").then(function(data) {
+//console.log(data[0][0].chapters);
+
+document.getElementById('chapters').innerHTML = data[0][0].chapters; 
+document.getElementById('members').innerHTML = data[0][0].members;
+document.getElementById('countries').innerHTML = data[0][0].countries;
+document.getElementById('city').innerHTML = data[0][0].city;
+document.getElementById('pastevents').innerHTML = data[0][0].past_events;
+document.getElementById('upcomingevents').innerHTML = data[0][0].upcoming_events;
+document.getElementById('avgchapter').innerHTML = data[0][0].avgchapter;
+document.getElementById('avgevent').innerHTML = data[0][0].avgevent;
+document.getElementById('avgmember').innerHTML = data[0][0].avgmember;
+document.getElementById('years').innerHTML = new Date().getFullYear() - 2012 + 1;
+
+
+$('.count').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 5000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+     });
+
+});
+
+d3.json("data/pyladies_summary.json").then(function(data) {
+document.getElementById('lastupdate').innerHTML = "Last Update: " + data[0][0].last_update;
+});
+
+});
+
+
+ 
+</script>
+
+<div class="row">
+              <div class="col-md-12">
+                
+                  <div class="x_content">
+                    <div class="row">
+                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats" style="background-color:white">
+                          <div class="icon" style="color:#ee264d"><i class="fa fa-users"></i>
+                          </div>
+                          <div id="chapters" class="count" style="color:#ee264d"></div>
+<p style="color:#ee264d"></p>
+                      <h3>PyLadies Chapters</h3>
+                          <br/>
+                        </div>
+                      </div>
+                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats" style="background-color:white">
+
+                          <div ><img align="right" src="pyladies_logo.png" height=60px width=60px></i>
+                          </div>
+                          <div id="members" class="count" style="color:#ee264d"></div>
+
+                          <h3>PyLadies Members</h3>
+                          <p></p><br/>
+
+                        </div>
+                      </div>
+                      
+<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats" style="background-color:white">
+                          <div class="icon" style="color:#ee264d"><i class="fa fa-globe"></i>
+                          </div>
+                          <div id="countries" class="count" style="color:#ee264d"></div>
+                          <h3>Countries</h3>
+                          <p style="color:#920076"></p><br/>
+
+                        </div>
+                      </div>
+
+<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats" style="background-color:white">
+
+                          <div class="icon" style="color:#ee264d"><i class="fa fa-map-marker"></i>
+                          </div>
+                          <div id="city" class="count" style="color:#ee264d"></div>
+
+                          <h3>Cities</h3>
+                          <p></p><br/>
+
+                        </div>
+                      </div>
+
+
+                             </div></div></div>
+
+
+
+
+<div class="col-md-12" >
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>PyLadies Chapters<small>Worldwide</small></h2>
+<div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                   
+   <i class="glyphicon glyphicon-calendar fa fa-globe"></i>
+   
+ <span><a href="pyladies-cluster-map.html">View Cluster Map</a></span>
+                    </div>
+
+      <div class="clearfix"></div>
+
+                  </div>
+                  <div class="x_content" >
+                    <div class="wow fadeInDown col-md-9-5 col-sm-9-5 col-xs-12" style="margin:0px -5px 0px -30px;">
+                      
+<!-- map goes here -->
+                 <div class="x_content" >
+<!-- <div id = "rladies_world_map" style="height:490px; width:100%;" ></div> -->
+<div id="lfmap" style="height:680px; width:100%;" ></div>
+
+
+                  </div>
+                
+<!-- map ends here -->
+         <div class="clearfix"></div>
+                      <div class="tiles">
+                        <div class="col-md-4 tile">
+<div class="icon" style="color:blue"><i class="fa fa-circle" style="font-size:48px"></i> 
+<div id="unbegun" class="col-md-3" style="display:inline-block"></div>
+                          </div>
+<br/>
+                          <span>Average Member Per Chapter</span>
+                          <h2 id="avgmember"></h2>
+                          
+
+                        </div>
+                        <div class="col-md-4 tile">
+<div class="icon" style="color:#ff7800"><i class="fa fa-circle" style="font-size:48px">
+</i> <div id="inactive" class="col-md-3 " style="display:inline-block"></div>
+                          </div>
+<br/>
+                          <span>Average Chapters per Country</span>
+                          <h2 id="avgchapter"></h2>
+
+                          
+
+                        </div>
+                        <div class="col-md-4 tile">
+
+<div class="icon" style="color:red"><i class="fa fa-circle" style="font-size:48px"></i> 
+
+<div id="active" class="col-md-3" style="display:inline-block"></div>
+                          </div>
+<br/>
+                          <span>Average Event Per Chapter</span>
+                          <h2 id="avgevent"></h2>
+
+                          
+
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="wow fadeInDown col-md-2-5 col-sm-2-5 col-xs-12">
+                      <div>
+                        <div class="x_title">
+                          <h2>PyLadies Leadership</h2>
+                               <div class="clearfix"></div>
+                        </div>
+                        <ul class="list-unstyled top_profiles scroll-view" style="margin:0 0 -250px 0">
+                         <li class="media event" style="background:#fcefff;">
+                            <div class="profile_pic" style="margin:0px -20px 0px 0;">
+             <img src="https://github.com/pyladies/pyladies-assets/raw/master/geek/png/pylady_geek_full_standard.png
+" class="img-circle profile_img">
+              </div>
+                 <div class="media-body">
+                              <a class="title" href="https://github.com/pyladies/project-admin-logisitics">Project Administrators</a><p><strong></strong>PyLadies Global</p>
+			                            </div>
+                          </li>
+ 
+                        </ul>
+                      </div>
+                    </div>
+<p></p>
+
+<div class="col-md-2-5 col-sm-2-5 col-xs-12">
+<div class="x_title">
+                          <h2>Sponsors</h2>
+                               <div class="clearfix"></div>
+                        </div>
+                      <div>
+                        
+                        <ul class="list-unstyled top_profiles scroll-view">
+                          
+                         </ul>
+                      </div>
+                    </div>
+
+
+
+
+                  </div>
+                </div>
+              </div>
+            
+
+<div class="row">
+              <div class="col-md-12">
+                
+                  <div class="x_content">
+                    
+                      
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeInDown">
+                        <div class="tile-stats" style="background-color:white">
+                          <div class="icon" style="color:#ee264d"><i class="fa fa-calendar-minus-o"></i>
+                          </div>
+                          <div id="pastevents" class="count" style="color:#ee264d"></div>
+                          <h3>Past Events</h3>
+                          <p style="color:#ee264d"></p><br/>
+
+                        </div>
+                      </div>
+
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow fadeInDown">
+                        <div class="tile-stats" >
+                          <div class="icon" style="color:#ee264d"><i class="fa fa-calendar-plus-o"></i>
+                          </div>
+                          <div id="upcomingevents" class="count red"></div>
+
+                          <h3>Upcoming Events</h3>
+                          <p></p><br/>
+
+                        </div>
+                      </div>
+
+<div class="wow fadeInDown col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                        <div class="tile-stats" style="background-color:white">
+
+                          <div class="icon" style="color:#ee264d"><i class="fa fa-calendar"></i>
+                          </div>
+                          <div id="years" class="count" style="color:#ba1f1f"></div>
+
+                          <h3>Years</h3>
+                          <p></p><br/>
+
+                        </div>
+                      </div>
+
+
+				  </div>
+				</div>
+                      </div>
+
+
+              <div class="wow fadeInDown col-md-8 col-sm-8 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>PyLadies Chapters Across Regions</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+       <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+              <div id="region_chart" style="height:450px;"></div>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="wow fadeInDown col-md-4 col-sm-4 col-xs-12" >
+                <div class="x_panel" >
+                  <div class="x_title">
+                    <h2>Top Chapters</h2>
+                  
+  
+<ul id="myTab1" class="nav nav-tabs bar_tabs right" role="tablist">
+                        <li role="presentation" class="active"><a href="#tab_content11" id="home-tabb" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">By Members</a>
+                        </li>
+                        <li role="presentation" class=""><a href="#tab_content22" role="tab" id="profile-tabb" data-toggle="tab" aria-controls="profile" aria-expanded="false">By Events</a>
+                                              </ul>
+                                      </div>
+                  <div class="x_content wow fadeInDown">
+
+<div id="myTabContent2" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="tab_content11" aria-labelledby="home-tab" style="height:100%;">
+
+<table id="top-members" class="display table-hover" cellspacing="0" width="100%" >
+      <thead>
+        <tr>
+          <th>Name of Chapter</th>
+          <th>Members</th>
+         </tr>
+      </thead>
+    </table>
+
+
+<script>
+
+         $(document).ready(function() {
+
+d3.csv('https://raw.githubusercontent.com/py-community/pyladies/master/docs/data/pyladies.csv').then(function(data) {
+ var cleandata = data.map(function(d) {
+    var cleanD = {};
+    d3.keys(d).forEach(function(k) {
+      cleanD[_.trim(k)] = _.trim(d[k]);
+    });
+    return cleanD;
+  });
+// convert member attribute to integer
+ cleandata.forEach(function(d) {
+    d.members  = +d.members;
+      });
+//console.log(cleandata);
+
+var sorteddata = cleandata.sort(function(x, y){
+   return d3.descending(x.members, y.members) });
+
+
+
+group_name  = [];
+members  = [];
+var length = (sorteddata ).length;
+for (var i = 0; i < length; i++) {
+    group_name.push(sorteddata [i].name);
+    members.push(sorteddata [i].members);
+
+}
+//console.log(ddd);
+
+$('#top-members').dataTable({ "order": [[1, 'desc']], "searching": false }).fnAddData( [
+  [group_name[0], members[0]],[group_name[1], members[1]],
+  [group_name[2], members[2]],[group_name[3], members[3]],
+[group_name[4], members[4]],[group_name[5], members[5]],
+[group_name[6], members[6]],[group_name[7], members[7]],
+[group_name[8], members[8]],[group_name[9], members[9]], [group_name[10], members[10]],[group_name[11], members[11]],
+  [group_name[12], members[12]],[group_name[13], members[13]],
+[group_name[14], members[14]],[group_name[15], members[15]],
+[group_name[16], members[16]],[group_name[17], members[17]],
+[group_name[18], members[18]],[group_name[19], members[19]]
+
+]);
+
+});
+});
+</script>
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tab_content22" aria-labelledby="profile-tab">
+
+<table id="top-events" class="display table-hover" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>Name of Chapter</th>
+          <th>Number of Events</th>
+         </tr>
+      </thead>
+    </table>
+
+<script>
+
+         $(document).ready(function() {
+
+d3.csv('https://raw.githubusercontent.com/py-community/pyladies/master/docs/data/pyladies.csv').then(function(data) {
+ var cleandata = data.map(function(d) {
+    var cleanD = {};
+    d3.keys(d).forEach(function(k) {
+      cleanD[_.trim(k)] = _.trim(d[k]);
+    });
+    return cleanD;
+  });
+
+ cleandata.forEach(function(d) {
+    d.past_events  = +d.past_events;
+      });
+//console.log(cleandata);
+
+var sorteddata = cleandata.sort(function(x, y){
+   return d3.descending(x.past_events, y.past_events) });
+
+
+
+group_name  = [];
+events  = [];
+var length = (sorteddata ).length;
+for (var i = 0; i < length; i++) {
+    group_name.push(sorteddata [i].name);
+    events.push(sorteddata [i].past_events);
+
+}
+//console.log(ddd);
+
+$('#top-events').dataTable({ "order": [[1, 'desc']], "searching":false }).fnAddData( [
+  [group_name[0], events[0]],[group_name[1], events[1]],
+  [group_name[2], events[2]],[group_name[3], events[3]],
+[group_name[4], events[4]],[group_name[5], events[5]],
+[group_name[6], events[6]],[group_name[7], events[7]],
+[group_name[8], events[8]],[group_name[9], events[9]], [group_name[10], events[10]],[group_name[11], events[11]],
+  [group_name[12], events[12]],[group_name[13], events[13]],
+[group_name[14], events[14]],[group_name[15], events[15]],
+[group_name[16], events[16]],[group_name[17], events[17]],
+[group_name[18], events[18]],[group_name[19], events[19]]
+
+]);
+
+});
+});
+</script>
+
+
+
+
+                        </div>
+                      </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+<div class="wow fadeInDown col-md-8 col-sm-8 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Cumulative Growth of Chapters</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+              <div id="cumulative_chart" style="height:400px; position: relative; overflow: hidden;"></div>
+
+                  </div>
+                </div>
+              </div>
+<div class="wow fadeInDown col-md-4 col-sm-4 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Top Event Organizers</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                                                                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content" style="min-height:400px; ">
+
+<!-- content goes here
+              -->
+<table id="hosts" class="display table-hover" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>Name of Organizer</th>
+          <th>Events</th>
+         </tr>
+      </thead>
+    </table>
+
+<script>
+         $(document).ready(function() {
+
+d3.csv('https://raw.githubusercontent.com/py-community/pyladies/master/docs/data/pyladies_hosts.csv').then(function(data) {
+ var cleandata = data.map(function(d) {
+    var cleanD = {};
+    d3.keys(d).forEach(function(k) {
+      cleanD[_.trim(k)] = _.trim(d[k]);
+    });
+    return cleanD;
+  });
+//console.log(cleandata);
+organizers = [];
+events = [];
+var length = (cleandata).length;
+for (var i = 0; i < length-150; i++) {
+    organizers.push(cleandata[i].hostnames);
+    events.push(cleandata[i].hostcount);
+
+}
+
+$('#hosts').dataTable({ "order": [[1, 'desc']], "searching":false }).fnAddData( [
+  [organizers[0], events[0]],[organizers[1], events[1]],
+  [organizers[2], events[2]],[organizers[3], events[3]],
+[organizers[4], events[4]],[organizers[5], events[5]],
+[organizers[6], events[6]],[organizers[7], events[7]],
+[organizers[8], events[8]],[organizers[9], events[9]], [organizers[10], events[10]], [organizers[11], events[11]],
+  [organizers[12], events[12]],[organizers[13], events[13]],
+[organizers[14], events[14]],[organizers[15], events[15]],
+[organizers[16], events[16]],[organizers[17], events[17]],
+[organizers[18], events[18]],[organizers[19], events[19]]
+]);
+
+});
+});
+</script>
+                  </div>
+                </div>
+              </div>
+
+<div class="wow fadeInDown col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Top Destinations for PyLadies <small>Members Per City Per Region</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                                                                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content" style="min-height:460px; margin: 0px 0px -50px 0px;">
+
+<div class="col-md-4 col-sm-4 col-xs-6">
+<div id="pyladies_top_us_dest" style="height:400px;"></div>
+</div>
+
+<div class="col-md-4 col-sm-4 col-xs-6">
+<div id="pyladies_top_eu_dest" style="height:400px;"></div>
+</div>
+
+<div class="col-md-4 col-sm-4 col-xs-6">
+<div id="pyladies_top_latam_dest" style="height:400px;"></div>
+</div>
+
+<div class="col-md-4 col-sm-4 col-xs-6">
+<div id="pyladies_top_asia_dest" style="height:400px;"></div>
+</div>
+
+<div class="col-md-4 col-sm-4 col-xs-6">
+<div id="pyladies_top_aus_dest" style="height:400px;"></div>
+</div>
+
+<div class="col-md-4 col-sm-4 col-xs-6">
+<div id="pyladies_top_afr_dest" style="height:400px;"></div>
+</div>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+<div class="wow fadeInDown col-md-8 col-sm-8 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>PyLadies Across Regions</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+       <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+              <div id="member_pie" style="height:400px;"></div>
+
+                  </div>
+                </div>
+              </div>
+
+
+<div class=" wow fadeInDown col-md-4 col-sm-4 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Twitter</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                                                                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content" style="height:400px; overflow:scroll;">
+<!-- content goes here
+              -->
+<a href="http://twitter.com/pyladies?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @pyladies</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" href="http://twitter.com/pyladies?ref_src=twsrc%5Etfw">Tweets by PyLadies</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+                  </div>
+                </div>
+              </div>
+<div class="wow fadeInDown col-md-12 col-sm-12 col-xs-12" >
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Chapters Across Countries</h2>
+                   <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content" style="margin:0px 0px 0px -60px;">
+
+
+              <div id="pyladies_country_chart" style="height:400px; width:100%">
+</div>
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="wow fadeInDown col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2 style="color:#1985b6; font-weight:bold">Locate a PyLadies Chapter | <small> Ordered by the Newest Chapters</small></h2>
+                                        <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+
+<div class="container">
+<a name="dt"></a>
+  <div id="table-container" style="margin-left:-15px;background-color:white">
+    
+    <!-- /.container -->
+    <script type="text/javascript">
+      
+        //my custom function that creates a hyperlink
+  function format_link(link){
+    if (link)
+      return "<a href='" + link + "' target='_blank'>" + link + "</a>";
+    else
+      return "";
+  }
+      
+      init_table({
+        csv_path: 'https://raw.githubusercontent.com/py-community/pyladies/master/docs/data/pyladies.csv', 
+        element: 'table-container', 
+        allow_download: true,
+        csv_options: {separator: ',', delimiter: '"'},
+        datatables_options: {"order": [[7, "desc" ]], "paging": true, 
+    "bScrollCollapse": true,
+    "bPaginate": false,
+    "bJQueryUI": true,
+    "columnDefs": [
+    { "visible": false, "targets": 0 }
+  ]
+},
+        custom_formatting: [[7, format_link]] //execute the function on the 7th column of every row
+      });
+
+    </script>
+</div>
+</div>
+
+                  </div>
+</div><p id="lastupdate"></p>
+                            
+<div class="buttons">
+<button type="button" class="btn btn-info btn-lg btn-block bg-red" onclick="window.location.href='https://www.pyladies.com'"> JOIN OR START-UP A PYLADIES CHAPTER HERE!</button>
+</div>
+
+            </div>
+
+ 
+
+          </div>
+
+
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+           <a href="https://github.com/nyc-pyladies/pyladies-dashboard"><u> Global PyLadies Dashboard</u> </a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+      
+    
+
+    <!-- Custom Theme Scripts -->
+    <script src="https://py-community.github.io/resources/js/d3/d3.min.js"></script>
+<script src="https://py-community.github.io/resources/js/lodash-4.17.10/package/lodash.min.js"></script>
+<script src="https://py-community.github.io/resources/js/echarts/echarts.js"></script>
+   
+
+ <!-- Custom Theme Scripts -->
+    <script src="https://py-community.github.io/resources/js/echarts/custom.min.js"></script>
+<script src="https://py-community.github.io/resources/js/echarts/map/js/world.js"></script>
+
+<script src="https://py-community.github.io/resources/js/jquery.csv.min.js"></script>
+    <script src="https://py-community.github.io/resources/js/wow.min.js"></script>
+    <script>
+//Initiat WOW JS
+	new WOW().init();
+</script>
+
+   	
+  </body>
+</html>
