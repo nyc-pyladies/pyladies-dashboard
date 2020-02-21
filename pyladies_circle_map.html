@@ -1,0 +1,119 @@
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> PyLadies Cluster Map </title>
+
+    <link href="https://py-community.github.io/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://py-community.github.io/resources/leaflet-1.5.1/leaflet.css"/>
+<link rel="stylesheet" href="https://py-community.github.io/resources/leaflet-awesome-markers/dist/leaflet.awesome-markers.css">
+<link rel="stylesheet" href="https://py-community.github.io/resources/leaflet.markercluster/dist/MarkerCluster.css" />
+	<link rel="stylesheet" href="https://py-community.github.io/resources/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+<link href="https://py-community.github.io/resources/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://py-community.github.io/resources/css/custom.min.css" rel="stylesheet">
+
+    <script src="https://py-community.github.io/resources/js/jquery.min.js"></script> 
+   <script src="https://py-community.github.io/resources/leaflet-1.5.1/leaflet.js"></script>
+    <script src="https://py-community.github.io/resources/leaflet-awesome-markers/dist/leaflet.awesome-markers.js"></script>
+<script src="https://py-community.github.io/resources/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+  <style>
+    #map{ height: 91%; width:100%; }
+  </style>
+</head>
+<body style="background:#ffffff;">
+<div class="buttons">
+<button type="button" class="btn btn-info btn-lg btn-block bg-red" onclick="window.location.href='pyladies.html'"> BACK TO PYLADIES DASHBOARD </button>
+</div>
+
+  <div id="map"></div>
+
+	<script type="text/javascript">// initialize the map
+// maxZoom reduces the zoom level when you click on the cluster. Markers are closer at a smaller zoom level
+  var map = L.map('map', { maxZoom: 5}).setView([10, 10],2);
+  // load a tile layer
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      maxZoom: 18,
+      minZoom: 1
+    }).addTo(map);
+
+setTimeout(function () { map.invalidateSize() }, 1200);
+
+  // load GeoJSON from an external file
+  $.getJSON("https://raw.githubusercontent.com/py-community/pyladies/master/docs/data/pyladies_map_data.geojson",function(data){
+	//console.log(data.features[0])   
+ // add GeoJSON layer to the map once the file is loaded
+ var pins =   L.geoJSON(data, {
+    pointToLayer: function (feature, latlng) {
+              var circlemarker = new L.circleMarker(latlng, {
+    radius: feature.properties.members/100,
+    fillColor: "red",
+    color: "red",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+});
+past_events = feature.properties.past_events;
+
+if ( past_events >= 0 & feature.properties.days_since_last_event <= 180 | feature.properties.upcoming_events > 0) {
+      circlemarker.bindPopup("<b>" + feature.properties.url + '</b>' + '<br/>' + 'Created: '+ feature.properties.created + '<br/>' +
+ 'Members: ' + feature.properties.members  + '<br/>' + 'Past Events: '+ feature.properties.past_events
+  + '<br/>' + 'Upcoming Events: '+ feature.properties.upcoming_events + '<br/>' + 'Last Event Date: '+ feature.properties.last_event + '<br/>' + 'Active');
+      return circlemarker;
+}
+}  
+}).addTo(map);
+
+var pins2 = L.geoJSON(data, {
+    pointToLayer: function (feature, latlng) {
+              var circlemarker = new L.circleMarker(latlng, {
+    radius: feature.properties.members/50,
+    fillColor: "#ff7800",
+    color: "#ff7800",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+});
+past_events = feature.properties.past_events;
+if (feature.properties.days_since_last_event > 180 & past_events != 0 & feature.properties.upcoming_events == 0 ){
+circlemarker.bindPopup("<b>" + feature.properties.url + '</b>' + '<br/>' + 'Created: '+ feature.properties.created + '<br/>' +
+ 'Members: ' + feature.properties.members  + '<br/>' + 'Past Events: '+ feature.properties.past_events 
+  + '<br/>' + 'Upcoming Events: '+ feature.properties.upcoming_events + '<br/>' + 'Last Event Date: '+ feature.properties.last_event + '<br/>'  + 'Months Inactive: '+ Math.round(feature.properties.days_since_last_event/30) + ' months' + '<br/>' + 'Inactive: <a href="https://github.com/pyladies/info/"><b>Become an Organizer!</b></a>');
+        return circlemarker;
+    }
+}
+}).addTo(map)	  
+
+var pins3 = L.geoJSON(data, {
+    pointToLayer: function (feature, latlng) {
+              var circlemarker = new L.circleMarker(latlng, {
+    radius: feature.properties.members/10,
+    fillColor: "blue",
+    color: "blue",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+});
+past_events = feature.properties.past_events;
+if ( past_events == 0 & feature.properties.upcoming_events == 0) {
+circlemarker.bindPopup("<b>" + feature.properties.url + '</b>' + '<br/>' + 'Created: '+ feature.properties.created + '<br/>' +
+ 'Members: ' + feature.properties.members  + '<br/>' + 'Past Events: '+ feature.properties.past_events
+  + '<br/>' + 'Upcoming Events: '+ feature.properties.upcoming_events + '<br/>' + 'Months Inactive: '+ Math.round((new Date() - new Date(feature.properties.created) ) /(30*60*60*24*1000)) + ' months' + '<br/>' + 'Unbegun: <a href="https://github.com/pyladies/info/"><b>Become an Organizer!</b></a>');
+        return circlemarker;
+    }
+}
+}).addTo(map)
+
+});
+</script>
+
+
+</body>
+</html>
+	
