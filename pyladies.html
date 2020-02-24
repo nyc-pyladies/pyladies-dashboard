@@ -235,7 +235,7 @@ $('.count').each(function () {
 
 });
 
-d3.json("data/pyladies_summary.json").then(function(data) {
+d3.json("https://raw.githubusercontent.com/py-community/pyladies/master/docs/data/pyladies_summary.json").then(function(data) {
 document.getElementById('lastupdate').innerHTML = "Last Update: " + data[0][0].last_update;
 });
 
@@ -371,6 +371,10 @@ document.getElementById('lastupdate').innerHTML = "Last Update: " + data[0][0].l
                           
 
                         </div>
+<br/>
+<div class="col-md-12 tile"><p style="color:#ee264d; font-size:12px">* Inactive chapters have not had an event in the past 6 months and none upcoming. Unbegun chapters have not had one event in the past and none upcoming.</p>
+</div>
+
                       </div>
 
                     </div>
