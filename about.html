@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158857375-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-158857375-1');
+</script>
+	  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PyLadies | PyLadies Global Community</title>
+
+    <!-- Bootstrap -->
+<link href="https://py-community.github.io/resources/css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <link href="https://py-community.github.io/resources/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://py-community.github.io/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://py-community.github.io/resources/leaflet-1.5.1/leaflet.css"/>
+<link rel="stylesheet" href="https://py-community.github.io/resources/leaflet-awesome-markers/dist/leaflet.awesome-markers.css">
+
+    
+    <!-- Custom Theme Style -->
+    <link href="https://py-community.github.io/resources/css/custom.min.css" rel="stylesheet">
+
+
+    <script src="https://py-community.github.io/resources/js/jquery.min.js"></script>
+    <script src="https://py-community.github.io/resources/js/bootstrap.min.js"></script>
+    <script src="https://py-community.github.io/resources/js/jquery.csv.min.js"></script>
+    <script src="https://py-community.github.io/resources/js/jquery.dataTables.min.js"></script>
+    <script src="https://py-community.github.io/resources/js/dataTables.bootstrap.js"></script>
+    <script src="https://py-community.github.io/resources/js/csv_to_html_table.js"></script>
+<script src="https://py-community.github.io/resources/leaflet-1.5.1/leaflet.js"></script>
+    <script src="https://py-community.github.io/resources/leaflet-awesome-markers/dist/leaflet.awesome-markers.js"></script>
+    <link href="https://py-community.github.io/resources/css/animate.min.css" rel="stylesheet">
+
+<style>  
+.nav.side-menu>li.active>a{text-shadow:rgba(0,0,0,.25) 0 -1px 0;background:linear-gradient(white,white),#424040;color:purple; box-shadow:rgba(0,0,0,.25) 0 1px 0,inset rgba(255,255,255,.20) 0 1px 0}
+
+ .awesome-marker i {
+        font-size: 10px;
+        margin-top: 13px;
+        
+    }
+
+   </style>   
+  </head>
+
+  <body class="nav-sm" >
+    <div class="container body" >
+      <div class="main_container" >
+        <div class="col-md-3 left_col menu_fixed" style="background-color:white; ">
+          <div class="left_col scroll-view" style="background-color:white; font-size:14px">
+           
+		 <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="images/Rc.pn" width = "230px" alt="..." class="">
+              </div>
+              <div class="profile_info">
+                <span>.</span>
+                <h2></h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <div class="clearfix"></div>
+
+            
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section active">
+                <h3>General</h3>
+                <ul class="nav side-menu" >
+                  <li><a><i class="fa fa-home" ></i> <span style="">Home </span><span class="fa fa-chevron-right"></span></a>                  </li>
+
+
+<li><a href="#"><i class="fa fa-line-chart"></i> Python Groups <span class="fa fa-chevron-right"></span></a>
+                                      </li>
+
+                                           <li><a href="pyladies.html"><i class="fa fa-area-chart"></i> <span style="color:black; font-weight:bold">PyLadies Chapters</span><span class="fa fa-chevron-right"></span></a>
+                                      </li>
+<li><a href="about.html"><i class="fa fa-info-circle"></i> <span style="color:black; font-weight:bold">About</span><span class="fa fa-chevron-right"></span></a>
+                                      </li>
+
+                                  </ul>
+              </div>
+              <div class="menu_section">
+                <h3>External</h3>
+                <ul class="nav side-menu">
+                  <li><a href="https://www.python.org/psf/" target="_blank"><i class="fa fa-building"></i> <span style="color:black; font-weight:bold">PSF</span></a>
+                                      </li>
+               </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small" style="background-color:#aaaaaa;">
+              <a data-toggle="tooltip" data-placement="top" title="" style="background-color:#ffffff;">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a> 
+              <a id="menu_toggle2" data-toggle="tooltip" data-placement="top" title="FullScreen" style="background-color:#ffffff;">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true" ></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="" style="background-color:#ffffff;">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Home" href="index.html" style="background-color:#ffffff;">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav" style="background-color:white">
+          <div class="nav_menu" style="height:45px; background-color:white">
+            <nav>
+              
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-feed"></i> Follow Us
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                        <li>
+                 <a href="http://twitter.com/pyladies">
+                                                <span><i class="fa fa-twitter"></i>      Twitter</span>
+                      </a>
+<li>
+                 <a href="https://github.com/pyladies">
+                                                <span><i class="fa fa-github"></i>      GitHub</span>
+                      </a>
+
+                    </li>
+<li>
+                 <a href="http://slackin.pyladies.com/">
+                                                <span><i class="fa fa-slack"></i>      Slack</span>
+                      </a>
+
+                    </li>
+
+                                      </ul>
+                </li>
+<li class="">
+<a class="user-profile dropdown-toggle" href="https://github.com/nyc-pyladies/pyladies-dashboard" data-size="large" aria-label="Star "><i class="fa fa-github"></i> Star</a>
+</li>
+
+                                                                            </ul>
+                            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main" style="background:#fffffffa; ">
+          <div class="">
+            <div class="page-title">
+              <div class="title">
+<div class="col-md-12 col-sm-12 col-xs-12">
+
+                <h3 style="color:black">Global PyLadies Community</h3>
+</div>
+              </div>
+
+              
+              </div>
+            </div>
+            
+            <div class="clearfix"></div>
+
+<div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_content">
+                    <div class="row">
+
+<!-- / first about contact -->
+ <div class="col-md-5 col-sm-5 col-xs-12 profile_details">
+                        <div class="well profile_view">
+                          <div class="col-sm-12">
+                            <h4 class="brief"><i>Dashboard Project Manager</i></h4>
+                            <div class="left col-xs-7">
+                              <h2>Reshama Shaikh</h2>
+                              <p><strong>About: </strong> Data Scientist / Statistician </p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-envelope"></i> Email: reshama.stat [at] gmail.com </li>
+                                <li><i class="fa fa-globe"></i> Web: https://reshamas.github.io/ </li>
+                              </ul>
+                            </div>
+                            <div class="right col-xs-5 text-center">
+                              <img src="https://reshamas.github.io/assets/images/reshama_photo.jpg" alt="" class="img-circle img-responsive">
+                            </div>
+                          </div>
+                          <div class="col-xs-12 bottom text-center">
+      <div class="col-xs-12 col-sm-6 emphasis">
+                              <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
+                                </i> <i class="fa fa-comments-o"></i> </button>
+                              <button type="button" class="btn btn-danger btn-xs">
+                                <i class="fa fa-user"> </i><a href="https://twitter.com/reshamas" style="color:white"> View Profile </a>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+<!-- / end of first about contact -->
+
+<!-- / second about contact -->
+ <div class="col-md-5 col-sm-5 col-xs-12 profile_details">
+                        <div class="well profile_view">
+                          <div class="col-sm-12">
+                            <h4 class="brief"><i>Dashboard Developer</i></h4>
+                            <div class="left col-xs-7">
+                              <h2>Ben Ubah</h2>
+                              <p><strong>About: </strong> Web Developer / Data Analyst </p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-envelope"></i> Email: ubah.ben22 [at] gmail com </li>
+                                <li><i class="fa fa-globe"></i> Web: https://github.com/benubah </li>
+                              </ul>
+                            </div>
+                            <div class="right col-xs-4 text-center">
+                              <img src="images/user.png" alt="" class="img-circle img-responsive">
+                            </div>
+                          </div>
+                          <div class="col-xs-12 bottom text-center">
+      <div class="col-xs-12 col-sm-6 emphasis">
+                              <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
+                                </i> <i class="fa fa-comments-o"></i> </button>
+                              <button type="button" class="btn btn-danger btn-xs">
+                                <i class="fa fa-user"> </i> <a href="https://github.com/benubah" style="color:white">View Profile </a>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+<!--  end of second about contact -->
+
+
+   <div class="col-md-12 col-sm-12 col-xs-12 profile_details">
+                        <div class="well profile_view">
+                          <div class="col-sm-12">
+                            <h4 class="brief"><i>About the Dashboard</i></h4>
+                            <div class="left col-xs-12">
+                              
+                              <p>This is an infrastructure to explore PyLadies chapters around the world in a data-driven manner that explores trends and provides insights to enhance better decision making for the chapters and PyLadies leadership.
+
+The goal is to make it easier to find chapters, find upcoming events, discover active and inactive groups, track high profile groups based on activity and size, understand the global distribution of groups and bring to light, areas of under-representation.</p>
+<p>Primary data source for this work is the API of meetup.com</p>
+<br/>
+<h2>Tools</h2>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-wrench"></i> <b>Front-end:</b> Pure HTML / JavaScript, D3.js, Echarts.js, Leaflet.js, Gentellala dashboard template </li>             
+
+                                <li><i class="fa fa-wrench"></i> <b>Back-end:</b> An ETL infrastructure based on R, Bash and Travis CI that daily retrieves data from Meetup API. This infrastructure provides a way to work with Meetup's OAUTH 2.0 authentication system automatically. </li>                              
+                 </ul>
+<br/>
+<h2>Contribution</h2>
+ <p>You are welcome to contribute Python code to the ETL infrastructure and to the Front-end parts of this dashboard. Feel free to get in touch with us, we appreciate your help. </p>
+       
+
+      </div>
+                           </div>
+                  <div class="col-xs-12 bottom ">                            <div class="col-xs-12 col-sm-6 emphasis">
+                              <button type="button" class="btn btn-danger btn-xs">
+                                </i> <i class="fa fa-comments-o"></i> <a href="https://github.com/nyc-pyladies/pyladies-dashboard/issues" style="color:white">Submit an issue</a>
+</button>
+                                                          </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+         </div></div></div>      
+   </div>
+         </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+           <a href="https://github.com/nyc-pyladies/pyladies-dashboard"><u> Global PyLadies Dashboard</u> </a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+
+      </div>
+    </div>
+
+   <!-- Custom Theme Scripts -->
+    <script src="https://py-community.github.io/resources/js/d3/d3.min.js"></script>
+<script src="https://py-community.github.io/resources/js/lodash-4.17.10/package/lodash.min.js"></script>
+<script src="https://py-community.github.io/resources/js/echarts/echarts.js"></script>
+   
+
+ <!-- Custom Theme Scripts -->
+    <script src="https://py-community.github.io/resources/js/echarts/custom.min.js"></script>
+<script src="https://py-community.github.io/resources/js/echarts/map/js/world.js"></script>
+
+<script src="https://py-community.github.io/resources/js/jquery.csv.min.js"></script>
+    <script src="https://py-community.github.io/resources/js/wow.min.js"></script>
+    <script>
+//Initiat WOW JS
+	new WOW().init();
+</script>
+
+   	
+  </body>
+</html>
