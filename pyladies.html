@@ -50,8 +50,17 @@
         padding: 3px;
         box-sizing: border-box;
     }
-.nav.side-menu>li.active>a{text-shadow:rgba(0,0,0,.25) 0 -1px 0;background:linear-gradient(white,white),#424040;color:purple; box-shadow:rgba(0,0,0,.25) 0 1px 0,inset rgba(255,255,255,.20) 0 1px 0}
+.nav.side-menu>li>active{text-shadow:rgba(0,0,0,.25) 0 0px 0;
 
+background:linear-gradient(white,red),red; 
+
+box-shadow:rgba(0,0,0,.25) 0 1px 0,inset rgba(255,255,255,.20) 0 1px 0}
+
+.nav-sm .container.body .col-md-3.left_col{
+border-right: 1px solid #d9dee4;
+}
+.nav-sm .nav.side-menu li a{color:red;
+}
  .awesome-marker i {
         font-size: 10px;
         margin-top: 13px;
@@ -69,8 +78,8 @@
   <body class="nav-sm" >
     <div class="container body" >
       <div class="main_container" >
-        <div class="col-md-3 left_col menu_fixed" style="background-color:white; ">
-          <div class="left_col scroll-view" style="background-color:white; font-size:14px">
+        <div class="col-md-3 left_col menu_fixed" style="background-color:#fff; ">
+          <div class="left_col scroll-view" style="background-color:#fff; font-size:14px">
            
 		 <!-- menu profile quick info -->
             <div class="profile clearfix">
@@ -111,7 +120,7 @@
               <div class="menu_section">
                 <h3>External</h3>
                 <ul class="nav side-menu">
-<li><a href="https://www.pyladies.com" target="_blank"><i class="fa fa-globe"></i> <span style="color:black; font-weight:bold">pyladies.com</span></a>
+<li><a href="https://www.pyladies.com" target="_blank"><i class="fa fa-globe"></i> <span style="color:black; font-weight:bold">pyladies .com</span></a>
                                       </li>
                   <li><a href="https://www.python.org/psf/" target="_blank"><i class="fa fa-building"></i> <span style="color:black; font-weight:bold">PSF</span></a>
                                       </li>
@@ -408,8 +417,17 @@ document.getElementById('lastupdate').innerHTML = "Last Update: " + data[0][0].l
                         </div>
                       <div>
                         
-                        <ul class="list-unstyled top_profiles scroll-view">
-                          
+                        <ul class="list-unstyled ">
+<li class="media event">
+<img src="images/sponsor_ad.png">
+</li><li class="media event">
+<img src="images/sponsor_ad.png">                          
+</li>
+<li class="media event">
+<img src="images/sponsor_ad.png">
+</li><li class="media event">
+<img src="images/sponsor_ad.png">
+</li>
                          </ul>
                       </div>
                     </div>
