@@ -6,4 +6,4 @@ The goal is to make it easier to find chapters, find upcoming events, discover a
 
 Primary data source for this work is the API of meetup.com
 
-The Dashboard will be available soon: https://nyc-pyladies.github.io/pyladies-dashboard/pyladies.html
+The Dashboard will be available soon: [https://nyc-pyladies.github.io/pyladies-dashboard/pyladies.html](https://nyc-pyladies.github.io/pyladies-dashboard/pyladies.html)
